@@ -7,18 +7,18 @@
   
   
   
-  <title>jquery插件开发规范 | 刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站</title>
+  <title>Hexo和github打造个人博客 | 刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jQuery插件开发方式主要有三种：1.通过$.extend()来扩展jQuery2.通过$.fn 向jQuery添加新的方法3.通过$.widget()应用jQuery UI的部件工厂方式创建">
+  <meta name="description" content="hexo和github打造个人博客 ：     使用hexo和github打造属于自己的静态博客，展示自己的作品，思想……">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jquery插件开发规范">
-<meta property="og:url" content="http://yoursite.com/2015/05/05/jquery插件开发规范/index.html">
+<meta property="og:title" content="Hexo和github打造个人博客">
+<meta property="og:url" content="http://yoursite.com/2015/04/16/Hexo和github打造个人博客/index.html">
 <meta property="og:site_name" content="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站">
-<meta property="og:description" content="jQuery插件开发方式主要有三种：1.通过$.extend()来扩展jQuery2.通过$.fn 向jQuery添加新的方法3.通过$.widget()应用jQuery UI的部件工厂方式创建">
-<meta property="og:updated_time" content="2017-07-08T06:31:25.930Z">
+<meta property="og:description" content="hexo和github打造个人博客 ：     使用hexo和github打造属于自己的静态博客，展示自己的作品，思想……">
+<meta property="og:updated_time" content="2017-07-08T09:49:51.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery插件开发规范">
-<meta name="twitter:description" content="jQuery插件开发方式主要有三种：1.通过$.extend()来扩展jQuery2.通过$.fn 向jQuery添加新的方法3.通过$.widget()应用jQuery UI的部件工厂方式创建">
+<meta name="twitter:title" content="Hexo和github打造个人博客">
+<meta name="twitter:description" content="hexo和github打造个人博客 ：     使用hexo和github打造属于自己的静态博客，展示自己的作品，思想……">
   
     <link rel="alternative" href="/atom.xml" title="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站" type="application/atom+xml">
   
@@ -253,11 +253,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-jquery插件开发规范" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Hexo和github打造个人博客" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2015/05/05/jquery插件开发规范/" class="article-date">
-      <time datetime="2015-05-05T11:25:21.000Z" itemprop="datePublished">2015-05-05</time>
+      <a  href="/2015/04/16/Hexo和github打造个人博客/" class="article-date">
+      <time datetime="2015-04-15T22:15:43.000Z" itemprop="datePublished">2015-04-16</time>
 </a>
 
     </div>
@@ -271,7 +271,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jquery插件开发规范
+      Hexo和github打造个人博客
     </h1>
   
 
@@ -289,12 +289,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>jQuery插件开发方式主要有三种：<br>1.通过$.extend()来扩展jQuery<br>2.通过$.fn 向jQuery添加新的方法<br>3.通过$.widget()应用jQuery UI的部件工厂方式创建</p><br><a id="more"></a><br><ul><br><li><br><p>通过$.extend()来扩展jQuery</p><br></li><br><li><br><p>通过$.fn 向jQuery添加新的方法</p><br></li><br><li><br><br><p>通过$.widget()应用jQuery UI的部件工厂方式创建</p><br><p>第一种方式太简单，仅仅是在jQuery命名空间或者理解成jQuery身上添加了一个静态方法而已，所以我们调用通过$.extend()添加的函数时直接通过$符号调用（$.myfunction()）而不需要选中DOM元素($(‘#example’).myfunction())，这种方式无法利用jQuery强大的选择器带来的便利，要处理DOM元素以及将插件更好地运用于所选择的元素身上，还是需要使用第二种开发方式<br>通常我们使用第二种方法来进行简单插件开发，说简单是相对于第三种方式。第三种方式是用来开发更高级jQuery部件的，该模式开发出来的部件带有很多jQuery内建的特性，比如插件的状态信息自动保存，各种关于插件的常用方法等</p>
-
-<p></p></li><p></p>
-<p></p></ul><p></p>
-<p></p><p>请按照以下的方式（安全结构良好的代码）编写插件</p><p></p>
-<div class="highlight highlight-source-js"><br><pre>;(<span class="pl-k">function(<span class="pl-smi">$,<span class="pl-c1">window,<span class="pl-c1">document,<span class="pl-c1">undefined){<br>    <span class="pl-c"><span class="pl-c">//我们的代码。。<br>    <span class="pl-c"><span class="pl-c">//blah blah blah…<br>})(jQuery,<span class="pl-c1">window,<span class="pl-c1">document);</span></span></span></span></span></span></span></span></span></span></span></pre><br></div><br><p>例：</p><br><div class="highlight highlight-source-js"><br><pre>;(<span class="pl-k">function(<span class="pl-smi">$, <span class="pl-c1">window, <span class="pl-c1">document,<span class="pl-c1">undefined) {<br>    <span class="pl-c"><span class="pl-c">//定义Beautifier的构造函数<br>    <span class="pl-k">var <span class="pl-en">Beautifier <span class="pl-k">= <span class="pl-k">function(<span class="pl-smi">ele, <span class="pl-smi">opt) {<br>        <span class="pl-c1">this.<span class="pl-smi">$element <span class="pl-k">= ele,<br>        <span class="pl-c1">this.<span class="pl-smi">defaults <span class="pl-k">= {<br>            <span class="pl-s"><span class="pl-pds">‘color<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘red<span class="pl-pds">‘,<br>            <span class="pl-s"><span class="pl-pds">‘fontSize<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘12px<span class="pl-pds">‘,<br>            <span class="pl-s"><span class="pl-pds">‘textDecoration<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘none<span class="pl-pds">‘<br>        },<br>        <span class="pl-c1">this.<span class="pl-c1">options <span class="pl-k">= <span class="pl-smi">$.<span class="pl-en">extend({}, <span class="pl-c1">this.<span class="pl-smi">defaults, opt)<br>    }<br>    <span class="pl-c"><span class="pl-c">//定义Beautifier的方法<br>    <span class="pl-smi">Beautifier.<span class="pl-c1">prototype <span class="pl-k">= {<br>        <span class="pl-en">beautify<span class="pl-k">: <span class="pl-k">function() {<br>            <span class="pl-k">return <span class="pl-c1">this.<span class="pl-smi">$element.<span class="pl-en">css({<br>                <span class="pl-s"><span class="pl-pds">‘color<span class="pl-pds">‘<span class="pl-k">: <span class="pl-c1">this.<span class="pl-c1">options.<span class="pl-c1">color,<br>                <span class="pl-s"><span class="pl-pds">‘fontSize<span class="pl-pds">‘<span class="pl-k">: <span class="pl-c1">this.<span class="pl-c1">options.<span class="pl-c1">fontSize,<br>                <span class="pl-s"><span class="pl-pds">‘textDecoration<span class="pl-pds">‘<span class="pl-k">: <span class="pl-c1">this.<span class="pl-c1">options.<span class="pl-c1">textDecoration<br>            });<br>        }<br>    }<br>    <span class="pl-c"><span class="pl-c">//在插件中使用Beautifier对象<br>    <span class="pl-smi">$.<span class="pl-smi">fn.<span class="pl-en">myPlugin <span class="pl-k">= <span class="pl-k">function(<span class="pl-smi">options) {<br>        <span class="pl-c"><span class="pl-c">//创建Beautifier的实体<br>        <span class="pl-k">var beautifier <span class="pl-k">= <span class="pl-k">new <span class="pl-en">Beautifier(<span class="pl-c1">this, options);<br>        <span class="pl-c"><span class="pl-c">//调用其方法<br>        <span class="pl-k">return <span class="pl-smi">beautifier.<span class="pl-en">beautify();<br>    }<br>})(jQuery, <span class="pl-c1">window, <span class="pl-c1">document);</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br></div><br><p><br><br></p><br><h2><a id="user-content-编写中的注意事项" class="anchor" href="https://github.com/woodens/experience/blob/master/jquery%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md#编写中的注意事项" target="_blank" rel="external"></a>编写中的注意事项：</h2><br><ul><br><ul><br><li>在代码开头加一个分号<br>用来充当自调用匿名函数的第一对括号容易与别人定义的函数相连，中间没有分号造成我们的代码无法正常解析进而报错,所以好的做法是我们在代码开头加一个分号，这在任何时候都是一个好的习惯</li><br><li>将系统变量以参数形式传递到插件内部可以提高访问速度<br>至于这个undefined，稍微有意思一点，为了得到没有被修改的undefined，我们并没有传递这个参数，但却在接收时接收了它，因为实际并没有传，所以‘undefined’那个位置接收到的就是真实的’undefined’了</li><br><li>命名规范<br><ul><br><li>a:变量及函数命名 一般使用驼峰命名法（CamelCase）</li><br><li>b:在JavaScript中多用单引号</li><br><br></ul><br><br></li><br><li>插件开发请使用面向对象思维<br>因为如果不这样，你可能需要一个方法的时候就去定义一个function，当需要另外一个方法的时候，再去随便定义一个function，同样，需要一个变量的时候，毫无规则地定义一些散落在代码各处的变量</li><br><li>保护好默认参数<br><ul><br><li>示例代码a</li><br><br></ul><br><div class="highlight highlight-source-js"><br><pre><span class="pl-k">var defaults <span class="pl-k">= {<br>    <span class="pl-s"><span class="pl-pds">‘color<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘red<span class="pl-pds">‘,<br>    <span class="pl-s"><span class="pl-pds">‘fontSize<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘12px<span class="pl-pds">‘<br>};<br><span class="pl-k">var settings <span class="pl-k">= <span class="pl-smi">$.<span class="pl-en">extend(defaults, options);</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br></div><br><ul><br><li>示例代码b</li><br></ul><br><div class="highlight highlight-source-js"><br><pre><span class="pl-k">var defaults <span class="pl-k">= {<br>    <span class="pl-s"><span class="pl-pds">‘color<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘red<span class="pl-pds">‘,<br>    <span class="pl-s"><span class="pl-pds">‘fontSize<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘12px<span class="pl-pds">‘<br>};<br><span class="pl-k">var settings <span class="pl-k">= <span class="pl-smi">$.<span class="pl-en">extend({},defaults, options);<span class="pl-c"><span class="pl-c">//将一个空对象做为第一个参数</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br></div><br>示例代码a中调用extend时会将defaults的值改变，这样不好，因为它作为插件因有的一些东西应该维持原样，另外就是如果你在后续代码中还要使用这些默认值的话，当你再次访问它时它已经被用户传进来的参数更改了<br>示例代码b中将一个新的空对象做为$.extend的第一个参数，defaults和用户传递的参数对象紧随其后，这样做的好处是所有值被合并到这个空对象上，保护了插件里面的默认值</li><br><li>让插件接收参数<br>一个强劲的插件是可以让使用者随意定制的，这要求我们提供在编写插件时就要考虑得全面些，尽量提供合适的参数</li><br><li>支持链式调用<br>要让插件不打破jQuery支持链式调用的特性（选择好DOM元素后可以不断地调用其他方法），只需return一下即可</li><br><br></ul><br></ul>
+        <div class="article-entry" itemprop="articleBody"><br> <p><strong> hexo和github打造个人博客 ：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>    使用hexo和github打造属于自己的静态博客，展示自己的作品，思想……<br><a id="more"></a><br><a id="more"></a></excerpt></p><br><the rest="" of="" contents="" |="" 余下全文=""><br><br><p>##说明<br>    自己在使用hexo搭建静态博客的时候踩了许多坑,最终去官网看教程搞定了,<br>    建议用hexo搭建个人博客的时候,最好看清教程的日期和使用的版本,这样就<br>    不会因为版本的不同导致的问题了.建议先去hexo官网了解一下<br>   <a href="https://hexo.io/zh-cn/" target="_blank" rel="external"><strong>hexo官网</strong></a></p><br><h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink"></a>1.准备工作</h2><ol><br><li>安装nodejs<ul><br><li>去官网下载nodejs安装(推荐安装4.x),安装之后在命令行 node -v,如果成功说明node环境ok,不成功就去环境变量配置一下.</li><br></ul><br></li><br><li>安装hexo<ul><br><li>使用命令 npm install hexo -g,执行hexo -v 查看版本,本教程适合<strong>3.1.1以上</strong>版本</li><br></ul><br></li><br><li>安装git<ul><br><li>去官网下载git安装,不会自行百度</li><br></ul><br></li><br><li>配置git<ul><br><li>配置ssh私钥,上传到github上</li><br></ul><br></li><br></ol><br><h2 id="2-github-pages的说明"><a href="#2-github-pages的说明" class="headerlink"></a>2.github-pages的说明</h2><ol><br><li>github有两种主页,一种是github-page(个人主页),一种是项目主页,本教程针对个人主页</li><br><li>github-page需要将hexo博客发布到repository的master(主干)即可</li><br><li>github的个人主页要求repository的名称和username一致，加入username是tom，则repository的名称为tom.github.io</li><br></ol><br><h2 id="3-使用hexo写博客"><a href="#3-使用hexo写博客" class="headerlink"></a>3.使用hexo写博客</h2><pre><code>- 新建一个文件夹myblog,<br>- 右键git bash here使用git的shell<br>- 在shell中输入hexo init,回车执行<br>- 在shell中输入hexo g ,回车<br>- 在shell中hexo s,回车<br>- 去浏览器访问<a href="http://localhost:4000,访问到主页,然后在shell中ctrl" target="_blank" rel="external">http://localhost:4000,访问到主页,然后在shell中ctrl</a> c停止<br>- 在shell中hexo new “first-blog”,回车<br>- 在shell中hexo g ,回车<br>- 在shell中hexo s ,回车,在访问<br>- ok,在本地测试就没问题了<br></code></pre><h2 id="4-发布到github"><a href="#4-发布到github" class="headerlink"></a>4.发布到github</h2><p>打开项目根部录下的.config.yml,找到deploy,修改如下:</p><br><figure class="highlight less"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line"> - <span class="attribute">type</span>: git</div><div class="line">   <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourname/yourname.github.io.git,master</div></pre></td></tr></tbody></table></figure><br><figure class="highlight dts"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">deploy:</span></div><div class="line"><span class="symbol">  type:</span> git</div><div class="line"><span class="symbol">  repo:</span> <span class="params">&lt;repository url&gt;</span></div><div class="line"><span class="symbol">  branch:</span> [branch]</div><div class="line"><span class="symbol">  message:</span> [message]</div></pre></td></tr></tbody></table></figure><br><p>访问地址就是 <a href="http://tom.github.io/" target="_blank" rel="external">http://tom.github.io/</a></p><br><h2 id="5-常用命令"><a href="#5-常用命令" class="headerlink"></a>5.常用命令</h2><pre><code>命令的简写为：<br><figure class="highlight verilog"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo n == hexo <span class="keyword">new</span></div><div class="line">hexo g == hexo <span class="keyword">generate</span></div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div><div class="line">hexo clean  删除public文件夹</div></pre></td></tr></tbody></table></figure><br></code></pre><h2 id="6-常见问题"><a href="#6-常见问题" class="headerlink"></a>6.常见问题</h2><ol><br><li>部署时出现git not found<ul><br><li>npm install hexo-deployer-git –save  安装依赖包</li><br></ul><br></li><br></ol><br><h2 id="7-详细设置"><a href="#7-详细设置" class="headerlink"></a>7.详细设置</h2><pre><code>每个人对自己的博客都有不一样的要求，比如主题，分类，标签，评论插件的选择，<br>这些对程序员的你来说，都是小菜一碟，下面是官网教程：<br></code></pre><p>   <a href="https://hexo.io/docs/" target="_blank" rel="external">hexo官方文档</a></p><br><p>博客效果可以看我的个人博客     <a href="http://www.sxit.club/" target="_blank" rel="external">我的个人博客</a></p><br><br><br>    </the></div>
       
     </div>
     
@@ -302,13 +297,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2015/05/05/jquery插件开发规范/">jquery插件开发规范</a></p>
+        <p><span>本文标题:</span><a  href="/2015/04/16/Hexo和github打造个人博客/">Hexo和github打造个人博客</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 刘伟坤 的个人博客">刘伟坤</a></p>
-        <p><span>发布时间:</span>2015年05月05日 - 19时25分</p>
-        <p><span>最后更新:</span>2017年07月08日 - 14时31分</p>
+        <p><span>发布时间:</span>2015年04月16日 - 06时15分</p>
+        <p><span>最后更新:</span>2017年07月08日 - 17时49分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/05/05/jquery插件开发规范/" title="jquery插件开发规范">http://yoursite.com/2015/05/05/jquery插件开发规范/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2015/05/05/jquery插件开发规范/　　作者: 刘伟坤" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2015/04/16/Hexo和github打造个人博客/" title="Hexo和github打造个人博客">http://yoursite.com/2015/04/16/Hexo和github打造个人博客/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2015/04/16/Hexo和github打造个人博客/　　作者: 刘伟坤" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -319,18 +314,18 @@
 
 <nav id="article-nav">
   
-    <a  href="/2015/05/10/javascript回调函数笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/2015/04/16/搭建Hexo博客并部署到Github/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          javascript回调函数
+          搭建Hexo博客并部署到Github
         
       </div>
     </a>
   
   
-    <a  href="/2015/05/05/你有必要知道的 25 个 JavaScript 面试题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">你有必要知道的 25 个 JavaScript 面试题</div>
+    <a  href="/2015/04/09/一个过来人告诉你怎么学javascript/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一个过来人告诉你怎么学javascript</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -342,7 +337,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">编写中的注意事项：</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-准备工作"><span class="toc-number">1.</span> <span class="toc-text">1.准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-github-pages的说明"><span class="toc-number">2.</span> <span class="toc-text">2.github-pages的说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用hexo写博客"><span class="toc-number">3.</span> <span class="toc-text">3.使用hexo写博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-发布到github"><span class="toc-number">4.</span> <span class="toc-text">4.发布到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-常用命令"><span class="toc-number">5.</span> <span class="toc-text">5.常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-常见问题"><span class="toc-number">6.</span> <span class="toc-text">6.常见问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-详细设置"><span class="toc-number">7.</span> <span class="toc-text">7.详细设置</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -413,13 +408,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2015/05/10/javascript回调函数笔记/" title="上一篇: javascript回调函数">
+            <a  href="/2015/04/16/搭建Hexo博客并部署到Github/" title="上一篇: 搭建Hexo博客并部署到Github">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2015/05/05/你有必要知道的 25 个 JavaScript 面试题/" title="下一篇: 你有必要知道的 25 个 JavaScript 面试题">
+            <a  href="/2015/04/09/一个过来人告诉你怎么学javascript/" title="下一篇: 一个过来人告诉你怎么学javascript">
                 <i class="fa fa-angle-right"></i>
             </a>
         
