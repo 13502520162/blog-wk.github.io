@@ -9,16 +9,16 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？ 使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)： let obj = {};let arr = []; console.log(typeof obj === ‘object’);  //trueconsole.log(typeof arr ==">
+  <meta name="description" content="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="你有必要知道的 25 个 JavaScript 面试题">
 <meta property="og:url" content="http://yoursite.com/2015/05/05/你有必要知道的 25 个 JavaScript 面试题/index.html">
 <meta property="og:site_name" content="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站">
-<meta property="og:description" content="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？ 使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)： let obj = {};let arr = []; console.log(typeof obj === ‘object’);  //trueconsole.log(typeof arr ==">
-<meta property="og:updated_time" content="2017-07-08T04:46:22.398Z">
+<meta property="og:description" content="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？…">
+<meta property="og:updated_time" content="2017-07-08T04:50:50.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你有必要知道的 25 个 JavaScript 面试题">
-<meta name="twitter:description" content="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？ 使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)： let obj = {};let arr = []; console.log(typeof obj === ‘object’);  //trueconsole.log(typeof arr ==">
+<meta name="twitter:description" content="1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？…">
   
     <link rel="alternative" href="/atom.xml" title="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站" type="application/atom+xml">
   
@@ -199,10 +199,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？</p>
+        <p>1、使用 typeof bar === “object” 判断 bar 是不是一个对象有神马潜在的弊端？如何避免这种弊端？…<br><a id="more"></a></p>
 <p>使用 typeof 的弊端是显而易见的(这种弊端同使用 instanceof)：</p>
-<p>let obj = {};<br>let arr = [];</p>
-<p>console.log(typeof obj === ‘object’);  //true<br>console.log(typeof arr === ‘object’);  //true<br>console.log(typeof null === ‘object’);  //true<br>从上面的输出结果可知，typeof bar === “object” 并不能准确判断 bar 就是一个 Object。可以通过Object.prototype.toString.call(bar) === “[object Object]” 来避免这种弊端：</p>
+<p> `let obj = {};<br>let arr = [];</p>
+<p>console.log(typeof obj === ‘object’);  //true<br>console.log(typeof arr === ‘object’);  //true<br>console.log(typeof null === ‘object’);  //true<br> `<br>从上面的输出结果可知，typeof bar === “object” 并不能准确判断 bar 就是一个 Object。可以通过Object.prototype.toString.call(bar) === “[object Object]” 来避免这种弊端：</p>
 <p>let obj = {};<br>let arr = [];</p>
 <p>console.log(Object.prototype.toString.call(obj));  //[object Object]<br>console.log(Object.prototype.toString.call(arr));  //[object Array]<br>console.log(Object.prototype.toString.call(null));  //[object Null]</p>
 <p>而 [] === false 是返回 false 的。<br>2、下面的代码会在 console 输出神马？为什么？</p>
