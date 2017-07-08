@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS“隐藏”元素的几种方法的对比 | 刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一说起CSS隐藏元素，我想大部分小伙伴们都会想到的第一种方法就是设置display为none..">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS“隐藏”元素的几种方法的对比">
+<meta property="og:url" content="http://yoursite.com/2016/03/25/CSS“隐藏”元素的几种方法的对比/index.html">
+<meta property="og:site_name" content="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站">
+<meta property="og:description" content="一说起CSS隐藏元素，我想大部分小伙伴们都会想到的第一种方法就是设置display为none..">
+<meta property="og:updated_time" content="2017-07-08T07:35:07.559Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS“隐藏”元素的几种方法的对比">
+<meta name="twitter:description" content="一说起CSS隐藏元素，我想大部分小伙伴们都会想到的第一种方法就是设置display为none..">
+  
+    <link rel="alternative" href="/atom.xml" title="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://www.sxit.club/img/lwk.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.sxit.club/img/lwk.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">刘伟坤</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.sxwl.pw">面试宝典</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">刘伟坤</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.sxit.club/img/lwk.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">刘伟坤</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-CSS“隐藏”元素的几种方法的对比" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/25/CSS“隐藏”元素的几种方法的对比/" class="article-date">
+  	<time datetime="2016-03-25T13:15:43.000Z" itemprop="datePublished">2016-03-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS“隐藏”元素的几种方法的对比
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><p>一说起CSS隐藏元素，我想大部分小伙伴们都会想到的第一种方法就是设置display为none..<a id="more"></a>这是最为人所熟知也是最常用的方法。我相信还有不少人想到使用设置visibility为hidden来隐藏元素，这种方式也是常用的方法，而且也有很多人知道两者的不同。除了这两种方法，本文还总结了一些比较不常用的方法，比较了这几种“隐藏”元素方法的区别和优缺点，欢迎大家交流！！</p><p></p>
+<p></p><h3 id="几种方法的简单介绍">几种方法的简单介绍</h3><p></p>
+<p></p><p>首先我们分别来说说到底有哪几种隐藏元素的方法，有一些方法是众所周知的，还有一些算是一种技巧。</p><p></p>
+<p></p><h4 id="display:none">display:none</h4><p></p>
+<p></p><p>设置元素的display为none是最常用的隐藏元素的方法。</p><p></p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td class="gutter"></td></p>
+<p><pre><span class="line">1<br><span class="line">2<br><span class="line">3<br></span></span></span></pre><br></p>
+<p><td class="code"></td></p>
+<p><pre><span class="line"><span class="class">.hide <span class="rules">{<br><span class="line">    <span class="rule"><span class="attribute">display:<span class="value">none;<br><span class="line">}<br></span></span></span></span></span></span></span></span></pre><br><br><br><br></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p>将元素设置为display:none后，元素在页面上将彻底消失，元素本来占有的空间就会被其他元素占有，也就是说它会导致浏览器的重排和重绘。</p><p></p>
+<p></p><h4 id="visibility:hidden">visibility:hidden</h4><p></p>
+<p></p><p>设置元素的visibility为hidden也是一种常用的隐藏元素的方法，和display:none的区别在于，元素在页面消失后，其占据的空间依旧会保留着，所以它只会导致浏览器重绘而不会重排。</p><p></p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td class="gutter"></td></p>
+<p><pre><span class="line">1<br><span class="line">2<br><span class="line">3<br></span></span></span></pre><br></p>
+<p><td class="code"></td></p>
+<p><pre><span class="line"><span class="class">.hidden{<br><span class="line">    <span class="attribute">visibility:hidden<br><span class="line">}<br></span></span></span></span></span></pre><br><br><br><br></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p>visibility:hidden适用于那些元素隐藏后不希望页面布局会发生变化的场景</p><p></p>
+<p></p><h4 id="opacity:0">opacity:0</h4><p></p>
+<p></p><p>opacity属性我相信大家都知道表示元素的透明度，而将元素的透明度设置为0后，在我们用户眼中，元素也是隐藏的，这算是一种隐藏元素的方法。</p><p></p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td class="gutter"></td></p>
+<p><pre><span class="line">1<br><span class="line">2<br><span class="line">3<br></span></span></span></pre><br></p>
+<p><td class="code"></td></p>
+<p><pre><span class="line"><span class="class">.transparent <span class="rules">{<br><span class="line">    <span class="rule"><span class="attribute">opacity:<span class="value"><span class="number">0;<br><span class="line">}<br></span></span></span></span></span></span></span></span></span></pre><br><br><br><br></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p>这种方法和visibility:hidden的一个共同点是元素隐藏后依旧占据着空间，但我们都知道，设置透明度为0后，元素只是隐身了，它依旧存在页面中。</p><p></p>
+<p></p><h4 id="设置height，width等盒模型属性为0">设置height，width等盒模型属性为0</h4><p></p>
+<p></p><p>这是我总结的一种比较奇葩的技巧，简单说就是将元素的margin，border，padding，height和width等影响元素盒模型的属性设置成0，如果元素内有子元素或内容，还应该设置其overflow:hidden来隐藏其子元素，这算是一种奇技淫巧。</p><p></p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td class="gutter"></td></p>
+<p><pre><span class="line">1<br><span class="line">2<br><span class="line">3<br><span class="line">4<br><span class="line">5<br><span class="line">6<br><span class="line">7<br><span class="line">8<br></span></span></span></span></span></span></span></span></pre><br></p>
+<p><td class="code"></td></p>
+<p><pre><span class="line"><span class="class">.hiddenBox <span class="rules">{<br><span class="line">    <span class="rule"><span class="attribute">margin:<span class="value"><span class="number">0;<br><span class="line">    <span class="rule"><span class="attribute">border:<span class="value"><span class="number">0;<br><span class="line">    <span class="rule"><span class="attribute">padding:<span class="value"><span class="number">0;<br><span class="line">    <span class="rule"><span class="attribute">height:<span class="value"><span class="number">0;<br><span class="line">    <span class="rule"><span class="attribute">width:<span class="value"><span class="number">0;<br><span class="line">    <span class="rule"><span class="attribute">overflow:<span class="value">hidden;<br><span class="line">}<br></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br><br><br><br></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p>这种方式既不实用，也可能存在着着一些问题。但平时我们用到的一些页面效果可能就是采用这种方式来完成的，比如jquery的slideUp动画，它就是设置元素的overflow:hidden后，接着通过定时器，不断地设置元素的height，margin-top，margin-bottom，border-top，border-bottom，padding-top，padding-bottom为0，从而达到slideUp的效果。</p><p></p>
+<p></p><h3 id="元素隐藏后的事件响应">元素隐藏后的事件响应</h3><p></p>
+<p></p><p>如果被隐藏的元素绑定了一些事件，我们执行了相关操作后，这些事件是否会被响应并执行呢，看看下面的代码：</p><p></p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td class="gutter"></td></p>
+<p><pre><span class="line">1<br><span class="line">2<br><span class="line">3<br><span class="line">4<br><span class="line">5<br><span class="line">6<br><span class="line">7<br><span class="line">8<br><span class="line">9<br><span class="line">10<br><span class="line">11<br><span class="line">12<br><span class="line">13<br><span class="line">14<br><span class="line">15<br><span class="line">16<br><span class="line">17<br><span class="line">18<br><span class="line">19<br><span class="line">20<br><span class="line">21<br><span class="line">22<br><span class="line">23<br><span class="line">24<br><span class="line">25<br><span class="line">26<br><span class="line">27<br><span class="line">28<br><span class="line">29<br><span class="line">30<br><span class="line">31<br><span class="line">32<br><span class="line">33<br><span class="line">34<br><span class="line">35<br><span class="line">36<br><span class="line">37<br></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br></p>
+<p><td class="code"></td></p>
+<p><pre><span class="line"><span class="tag">&lt;<span class="title">style&gt;<span class="css"><br><span class="line">    <span class="tag">div <span class="rules">{ <br><span class="line">        <span class="rule"><span class="attribute">width:<span class="value"> <span class="number">100px; <br><span class="line">        <span class="rule"><span class="attribute">height:<span class="value"> <span class="number">100px; <br><span class="line">        <span class="rule"><span class="attribute">background:<span class="value"> red; <br><span class="line">        <span class="rule"><span class="attribute">margin:<span class="value"> <span class="number">15px; <br><span class="line">        <span class="rule"><span class="attribute">padding:<span class="value"> <span class="number">10px; <br><span class="line">        <span class="rule"><span class="attribute">border:<span class="value"> <span class="number">5px solid green; <br><span class="line">        <span class="rule"><span class="attribute">display:<span class="value"> inline-block; <br><span class="line">        <span class="rule"><span class="attribute">overflow:<span class="value"> hidden; <br><span class="line">    }<br><span class="line">    <span class="class">.none <span class="rules">{ <span class="rule"><span class="attribute">display:<span class="value"> none; }<br><span class="line">    <span class="class">.hidden <span class="rules">{ <span class="rule"><span class="attribute">visibility:<span class="value"> hidden; }<br><span class="line">    <span class="class">.opacity0 <span class="rules">{ <span class="rule"><span class="attribute">opacity:<span class="value"> <span class="number">0; }<br><span class="line">    <span class="class">.height0 <span class="rules">{ <span class="rule"><span class="attribute">height:<span class="value"> <span class="number">0; }  <br><span class="line"><span class="tag">&lt;/<span class="title">style&gt;  <br><span class="line"><br><span class="line"><span class="tag">&lt;<span class="title">div <span class="attribute">class=<span class="value">“none”&gt;<span class="tag">&lt;/<span class="title">div&gt;<br><span class="line"><span class="tag">&lt;<span class="title">div <span class="attribute">class=<span class="value">“hidden”&gt;<span class="tag">&lt;/<span class="title">div&gt;<br><span class="line"><span class="tag">&lt;<span class="title">div <span class="attribute">class=<span class="value">“opacity0”&gt;<span class="tag">&lt;/<span class="title">div&gt;<br><span class="line"><span class="tag">&lt;<span class="title">div <span class="attribute">class=<span class="value">“height0”&gt;aa<span class="tag">&lt;/<span class="title">div&gt;  <br><span class="line"><br><span class="line"><span class="tag">&lt;<span class="title">script <span class="attribute">src=<span class="value">“/Scripts/jquery-1.10.2.min.js”&gt;<span class="undefined"><span class="tag">&lt;/<span class="title">script&gt;<br><span class="line"><span class="tag">&lt;<span class="title">script&gt;<span class="javascript"><br><span class="line">    $(<span class="string">“.none”).on(<span class="string">“click”, <span class="function"><span class="keyword">function (<span class="params">) {<br><span class="line">        <span class="built_in">console.log(<span class="string">“none clicked”);<br><span class="line">    })<br><span class="line">    $(<span class="string">“.hidden”).on(<span class="string">“click”, <span class="function"><span class="keyword">function (<span class="params">) {<br><span class="line">        <span class="built_in">console.log(<span class="string">“hidden clicked”);<br><span class="line">    })<br><span class="line">    $(<span class="string">“.opacity0”).on(<span class="string">“click”, <span class="function"><span class="keyword">function (<span class="params">) {<br><span class="line">        <span class="built_in">console.log(<span class="string">“opacity0 clicked”);<br><span class="line">    })<br><span class="line">    $(<span class="string">“.height0”).on(<span class="string">“click”, <span class="function"><span class="keyword">function (<span class="params">) {<br><span class="line">        <span class="built_in">console.log(<span class="string">“height0 clicked”);<br><span class="line">    })<br><span class="line"><span class="tag">&lt;/<span class="title">script&gt;<br></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br><br><br><br></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p>这段代码将四种隐藏元素的方法分别展示出来，然后绑定其点击事件，经过测试，主要有下面的结论：<br>1、display:none：元素彻底消失，很显然不会触发其点击事件<br>2、visibility:hidden：无法触发其点击事件，有一种说法是display:none是元素看不见摸不着，而visibility:hidden是看不见摸得着，这种说法是不准确的，设置元素的visibility后无法触发点击事件，说明这种方法元素也是消失了，只是依然占据着页面空间。<br>3、opacity:0：可以触发点击事件，原因也很简单，设置元素透明度为0后，元素只是相对于人眼不存在而已，对浏览器来说，它还是存在的，所以可以触发点击事件<br>4、height:0：将元素的高度设置为0，并且设置overflow:hidden。使用这种方法来隐藏元素，是否可以触发事件要根据具体的情况来分析。如果元素设置了border，padding等属性不为0，很显然，页面上还是能看到这个元素的，触发元素的点击事件完全没有问题。如果全部属性都设置为0，很显然，这个元素相当于消失了，即无法触发点击事件。</p><p></p>
+<p></p><p>但是这些结论真的准确吗？<br>我们在上面的代码中添加这样一句代码：</p><p></p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td class="gutter"></td></p>
+<p><pre><span class="line">1<br></span></pre><br></p>
+<p><td class="code"></td></p>
+<p><pre><span class="line"><span class="variable">$(<span class="string">“.none”).click();<br></span></span></span></pre><br><br><br><br></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p>结果发现，触发了click事件，也就是通过JS可以触发被设置为display:none的元素的事件。<br>所以前面无法触发点击事件的真正原因是鼠标无法真正接触到被设置成隐藏的元素！！！</p><p></p>
+<p></p><h3 id="CSS3_transition对这几种方法的影响">CSS3 transition对这几种方法的影响</h3><p></p>
+<p></p><p>CSS3提供的transition极大地提高了网页动画的编写，但并不是每一种CSS属性都可以通过transition来进行动画的。我们修改代码如下：</p><p></p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td class="gutter"></td></p>
+<p><pre><span class="line">1<br><span class="line">2<br><span class="line">3<br><span class="line">4<br><span class="line">5<br><span class="line">6<br><span class="line">7<br><span class="line">8<br><span class="line">9<br><span class="line">10<br><span class="line">11<br><span class="line">12<br><span class="line">13<br><span class="line">14<br><span class="line">15<br><span class="line">16<br><span class="line">17<br><span class="line">18<br><span class="line">19<br><span class="line">20<br><span class="line">21<br><span class="line">22<br><span class="line">23<br><span class="line">24<br><span class="line">25<br><span class="line">26<br><span class="line">27<br><span class="line">28<br><span class="line">29<br><span class="line">30<br><span class="line">31<br><span class="line">32<br><span class="line">33<br><span class="line">34<br><span class="line">35<br><span class="line">36<br><span class="line">37<br><span class="line">38<br><span class="line">39<br><span class="line">40<br></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br></p>
+<p><td class="code"></td></p>
+<p><pre><span class="line"><span class="tag">&lt;<span class="title">style&gt;<span class="css"><br><span class="line">    <span class="tag">div <span class="rules">{ <br><span class="line">        <span class="rule"><span class="attribute">width:<span class="value"> <span class="number">100px; <br><span class="line">        <span class="rule"><span class="attribute">height:<span class="value"> <span class="number">100px; <br><span class="line">        <span class="rule"><span class="attribute">background:<span class="value"> red; <br><span class="line">        <span class="rule"><span class="attribute">margin:<span class="value"> <span class="number">15px; <br><span class="line">        <span class="rule"><span class="attribute">padding:<span class="value"> <span class="number">10px; <br><span class="line">        <span class="rule"><span class="attribute">border:<span class="value"> <span class="number">5px solid green; <br><span class="line">        <span class="rule"><span class="attribute">display:<span class="value"> inline-block; <br><span class="line">        <span class="rule"><span class="attribute">overflow:<span class="value"> hidden; <br><span class="line">        <span class="rule"><span class="attribute">transition:<span class="value"> all linear <span class="number">2s;  <br><span class="line">    }<br><span class="line"><span class="tag">&lt;/<span class="title">style&gt;  <br><span class="line"><br><span class="line"><span class="tag">&lt;<span class="title">div <span class="attribute">class=<span class="value">“none”&gt;<span class="tag">&lt;/<span class="title">div&gt;<br><span class="line"><span class="tag">&lt;<span class="title">div <span class="attribute">class=<span class="value">“hidden”&gt;<span class="tag">&lt;/<span class="title">div&gt;<br><span class="line"><span class="tag">&lt;<span class="title">div <span class="attribute">class=<span class="value">“opacity0”&gt;<span class="tag">&lt;/<span class="title">div&gt;<br><span class="line"><span class="tag">&lt;<span class="title">div <span class="attribute">class=<span class="value">“height0”&gt;aa<span class="tag">&lt;/<span class="title">div&gt;  <br><span class="line"><br><span class="line"><span class="tag">&lt;<span class="title">script <span class="attribute">src=<span class="value">“/Scripts/jquery-1.10.2.min.js”&gt;<span class="undefined"><span class="tag">&lt;/<span class="title">script&gt;<br><span class="line"><span class="tag">&lt;<span class="title">script&gt;<span class="javascript"><br><span class="line">$(<span class="string">“.none”).on(<span class="string">“click”, <span class="function"><span class="keyword">function (<span class="params">) {<br><span class="line">    <span class="built_in">console.log(<span class="string">“none clicked”);<br><span class="line">    $(<span class="keyword">this).css(<span class="string">“display”, <span class="string">“none”);<br><span class="line">})<br><span class="line">$(<span class="string">“.hidden”).on(<span class="string">“click”, <span class="function"><span class="keyword">function (<span class="params">) {<br><span class="line">    <span class="built_in">console.log(<span class="string">“hidden clicked”);<br><span class="line">    $(<span class="keyword">this).css(<span class="string">“visibility”, <span class="string">“hidden”);<br><span class="line">})<br><span class="line">$(<span class="string">“.opacity0”).on(<span class="string">“click”, <span class="function"><span class="keyword">function (<span class="params">) {<br><span class="line">    <span class="built_in">console.log(<span class="string">“opacity0 clicked”);<br><span class="line">    $(<span class="keyword">this).css(<span class="string">“opacity”, <span class="number">0);<br><span class="line">})<br><span class="line">$(<span class="string">“.height0”).on(<span class="string">“click”, <span class="function"><span class="keyword">function (<span class="params">) {<br><span class="line">    <span class="built_in">console.log(<span class="string">“height0 clicked”);<br><span class="line">    $(<span class="keyword">this).css({<br><span class="line">        <span class="string">“height”: <span class="number">0,<br><span class="line">    });<br><span class="line">})<br><span class="line"><span class="tag">&lt;/<span class="title">script&gt;<br></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br><br><br><br></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p>经过测试，可以看到：<br>1、display:none：完全不受transition属性的影响，元素立即消失<br>2、visibility：hidden：元素消失的时间跟transition属性设置的时间一样，但是没有动画效果<br>3、opacity和height等属性能够进行正常的动画效果</p><p></p>
+<p></p><p>假设我们要通过CSS3来做一个淡出的动画效果，应该如下：</p><p></p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td class="gutter"></td></p>
+<p><pre><span class="line">1<br><span class="line">2<br></span></span></pre><br></p>
+<p><td class="code"></td></p>
+<p><pre><span class="line"><span class="class">.fadeOut <span class="rules">{ <span class="rule"><span class="attribute">visibility:<span class="value"> visible; <span class="rule"><span class="attribute">opacity:<span class="value"> <span class="number">1; <span class="rule"><span class="attribute">transition:<span class="value"> all linear <span class="number">2s; }<br><span class="line">    <span class="rule"><span class="attribute">.fadeOut:<span class="value">hover { visibility: hidden; <span class="rule"><span class="attribute">opacity:<span class="value"> <span class="number">0; }<br></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br><br><br><br></p>
+<p></p><p>&nbsp;</p><p></p>
+<p></p><p>应该同时设置元素的visibility和opacity属性。</p><p></p>
+<p></p><h3 id="总结说明">总结说明</h3><p></p>
+<p></p><p>本文总结说明了“隐藏”元素的几种方式，其中最常用的还是display:none和visibility:hidden。其他的方式只能算是奇技淫巧，并不推荐使用它们来隐藏元素，它们的真正用途应该不在隐藏元素，而是通过了解这些方法的特点，挖掘出其真正的使用场景。欢迎大家交流！！</p><p></p>
+<p></p><h3 id="补充">补充</h3><p></p>
+<p></p><p>来自网友们提供的技巧：</p><p></p>
+<p></p><p>1、设置元素的position与left，top，bottom，right等，将元素移出至屏幕外</p><p></p>
+<p></p><p>2、设置元素的position与z-index，将z-index设置成尽量小的负数</p><p></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/09/详解Javascript中的Object对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          详解Javascript中的Object对象
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/20/同步回调函数与异步回调函数示例/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">同步回调函数与异步回调函数示例</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 刘伟坤
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>

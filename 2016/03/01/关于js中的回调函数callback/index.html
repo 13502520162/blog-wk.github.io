@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关于js中的回调函数callback | 刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于js中的回调函数callback">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于js中的回调函数callback">
+<meta property="og:url" content="http://yoursite.com/2016/03/01/关于js中的回调函数callback/index.html">
+<meta property="og:site_name" content="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站">
+<meta property="og:description" content="关于js中的回调函数callback">
+<meta property="og:updated_time" content="2017-07-08T07:30:12.831Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于js中的回调函数callback">
+<meta name="twitter:description" content="关于js中的回调函数callback">
+  
+    <link rel="alternative" href="/atom.xml" title="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://www.sxit.club/img/lwk.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.sxit.club/img/lwk.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">刘伟坤</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.sxwl.pw">面试宝典</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">刘伟坤</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.sxit.club/img/lwk.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">刘伟坤</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-关于js中的回调函数callback" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/01/关于js中的回调函数callback/" class="article-date">
+  	<time datetime="2016-03-01T02:21:02.000Z" itemprop="datePublished">2016-03-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于js中的回调函数callback
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于js中的回调函数callback</p><a id="more"></a><br><h4>前言</h4><br><p>其实我一直很困惑关于js 中的callback,困惑的原因是，学习中这块看的资料少，但是平时又经常见，偶尔复制一下前人代码，功能实现了也就不再去追其原由，这么着，这个callback的概念就越来越混乱，因为你总感觉它是你Ajax请求后调用的那个函数，又感觉它是你某一个函数中的形参而已，而当你有一天看到一点关于Node.js的代码后你会更加崩溃，因为你会发现很多的callback，但是这么着下去肯定是不行的，因为很多的东西如果只是知道概念和理论，没有实践出结果，没有思考和感受，这些东西永远不是你的，所以任何关于技术上用到的东西都应该去花时间钻研一下，学习 付出时间 实践都会搞明白的，还会沉淀很多思想,所以最近一直在浏览相关的文章和资料，自己在项目中也用到了一些去实践，这样一轮下来后，你会发现明亮了很多</p><br><h4>一 .搞清楚异步和同步</h4><br><p>异步async/同步sync</p><br><p>举个小栗子</p><br><p>1.早上起来不论你是先刷牙还是先洗脸，都要等一个事情完毕后才能进行下一项，这就是一个同步的例子</p><br><p>2.然后刷牙的时候你也可以烧水喝 （不用等你刷完牙）这就是一个异步的例子</p><br><p>来段异步代码示例</p><br><div class="image-package"><iframe id="iframe_0.6600144442841176" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22http://upload-images.jianshu.io/upload_images/2591047-9b1212dc3c608dd2.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240&amp;_=6516714%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.6600144442841176',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 359px; height: 165px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">js里面最基础的异步实现</div><br><br></div><br><div class="image-package"><iframe id="iframe_0.7241781411978112" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22http://upload-images.jianshu.io/upload_images/2591047-132e18d2589101b5.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240&amp;_=6516714%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.7241781411978112',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 374px; height: 184px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">运行结果</div><br><br></div><br><p>以上代码会先执行函数a,而且不会等到a中的延迟函数执行完才执行函数b, 在延迟函数被触发的过程中就执行了函数b,当js引擎的event 队列空闲时才会去执行队列里等待的setTimeout的回调函数，这就是一个异步的例子</p><br><p>题外话：</p><br><blockquote><br><p>调用 setTimeout 函数会在一个时间段过去后在队列中添加一个消息。这个时间段作为函数的第二个参数被传入。如果队列中没有其它消息，消息会被马上处理。但是，如果有其它消息，setTimeout 消息必须等待其它消息处理完。因此第二个参数仅仅表示最少的时间 而非确切的时间</p>
+
+<p></p></blockquote><p></p>
+<p>所以即使，时间设置为0，也是会照样先执行函数b</p><br><p>来段同步代码示例</p><br><div class="image-package"><iframe id="iframe_0.6298789530268281" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22http://upload-images.jianshu.io/upload_images/2591047-75857ee27a2aed0d.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240&amp;_=6516714%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.6298789530268281',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 225px; height: 192px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">结果输出1</div><br><br></div><br><p>print函数会等change函数完成之后去执行，所以结构输出为1，因为change函数修改了全局变量a的值，change执行之后才执行的print函数</p><br><h4>二.回调函数到底是什么</h4><br><blockquote><br><p>A callback is a function that is passed as an argument to another function and is executed after its parent function has completed.</p>
+
+<p></p></blockquote><p></p>
+<p></p><p>以上解释是Google得出的解释，非常清晰简明，有时候我觉得英文理解要比翻译成中文二次理解更清楚</p><p></p>
+<p></p><p>来看几个经典的回调函数代码，我敢保证你一定用过他们</p><p></p>
+<div class="image-package"><iframe id="iframe_0.3862990960794994" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22http://upload-images.jianshu.io/upload_images/2591047-2939c8fce9cbda9d.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240&amp;_=6516714%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.3862990960794994',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 437px; height: 114px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">异步请求的回调函数</div>
+
+<p></p></div><p></p>
+<div class="image-package"><iframe id="iframe_0.39231170798455817" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22http://upload-images.jianshu.io/upload_images/2591047-0e2faaa07201cd72.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240&amp;_=6516714%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.39231170798455817',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 453px; height: 100px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">点击事件的回调函数</div>
+
+<p></p></div><p></p>
+<div class="image-package"><iframe id="iframe_0.5694516065928097" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22http://upload-images.jianshu.io/upload_images/2591047-8f7fcd0baa4bf272.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240&amp;_=6516714%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.5694516065928097',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 425px; height: 117px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">数组中遍历每一项调用的回调函数</div>
+
+<p></p></div><p></p>
+<div class="image-package"><iframe id="iframe_0.3137120291413964" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22http://upload-images.jianshu.io/upload_images/2591047-33223532ef7cf509.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240&amp;_=6516714%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.3137120291413964',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 514px; height: 167px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">同步回调的例子</div>
+
+<p></p></div><p></p>
+<p></p><p>所以回调与同步、异步并没有直接的联系，回调只是一种实现方式，既可以有同步回调，也可以有异步回调，还可以有事件处理回调和延迟函数回调，这些在我们工作中有很多的使用场景</p><p></p>
+<p></p><p>所以其实并不是我们不认识回调函数，而是我们都萦绕在了这个“callback“ 这个词上，当你在一个函数中看到它是就会困惑，其实它只是一个形参名字而已</p><p></p>
+<p></p><h4>三.为什么写回调函数</h4><p></p>
+<p></p><p>看了以上的简单介绍之后，是不是对callback不再陌生和觉得神秘，所以尽情的去使用吧，</p><p></p>
+<p></p><p>1.关于回调函数和js单线程以及js异步机制</p><p></p>
+<p></p><p>我们都知道js是单线程的，这种设计模式给我们带来了很多的方便之处，我们不需要考虑各个线程之间的通信，也不需要写很多烧脑的代码，也就是说js的引擎只能一件一件事的去完成和执行相关的操作，所以所有需要执行的事情都像排队一样，等待着被触发和执行，可是如果这样的话，如果在队列中有一件事情需要花费很多的时间，那么后面的任务都将处于一种等待状态，有时甚至会出现浏览器假死现象，例如其中有一件正在执行的一个任务是一个死循环，那么会导致后续其他的任务无法正常执行，所以js在同步机制的缺陷下设计出了异步模式</p><p></p>
+<p></p><p>在异步执行的模式下，每一个异步的任务都有其自己一个或着多个回调函数，这样当前在执行的异步任务执行完之后，不会马上执行事件队列中的下一项任务，而是执行它的回调函数，而下一项任务也不会等当前这个回调函数执行完，因为它也不能确定当前的回调合适执行完毕，只要引它被触发就会执行，举个例子，</p><p></p>
+<div class="image-package"><iframe id="iframe_0.06551670950924637" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22http://upload-images.jianshu.io/upload_images/2591047-f771443bb91200a3.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240&amp;_=6516714%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.06551670950924637',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 848px; height: 343px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">图片资源还未请求完毕</div>
+
+<p></p></div><p></p>
+<p></p><p>上图可以看到，我要购买一个东西，当我点进物品的详情页之后，图片资源还未请求完毕，而此时我就可以点击add to cart, 发起另一个请求，js任务列表中的添加购物车事件就会开始执行，它的执行也不会干扰到图片资源的请求任务，这也是异步执行机制的妙处</p><p></p>
+<p></p><p>2.js的单线程浏览器内核的多线程</p><p></p>
+<p></p><p>说到js的单线程，顺便再了解一下关于浏览器内核的多线程，关于浏览器工作原理此处不做讲解，因为自己研究的不深入，等待研究学习研究透彻再分享</p><p></p>
+<div class="image-package"><iframe id="iframe_0.5076857678634448" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22http://upload-images.jianshu.io/upload_images/2591047-c3ccc072bbfa6a70.png?imageMogr2/auto-orient/strip%257CimageView2/2/w/1240&amp;_=6516714%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.5076857678634448',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 615px; height: 392px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">cayley的草图</div>
+
+<p></p></div><p></p>
+<p></p><p>浏览器常驻三大线程:&nbsp;&nbsp;js引擎线程，GUI渲染线程，浏览器事件触发线程</p><p></p>
+<p></p><p>看到此图你是不是会豁然开朗许多，因为浏览器是一个多线程的执行环境，在浏览器的内核中分配了多个线程，最主要的线程之一即是js引擎的线程，同时js事件队列中的异步请求，交互事件触发，定时器等事件都是由浏览器的事件触发线程进行监听的，浏览器的事件触发线程被触发后会把任务加入到js 引擎的任务队列中，当js 引擎空闲时候就会开始执行该任务</p><p></p>
+<p></p><h4>完结</h4><p></p>
+<p></p><p>以上就是本篇文章的全部内容，由对回调函数的陌生到熟悉和使用，以及对同步／异步的概念，还有js的执行机制以及浏览器内核的多线程机制相信大家都有了一个简单的知识脉络，希望通过此文提到的内容，每个小伙伴去查阅更深入的资料，于此同时我也会不断的去修缮，所以我们不能做一个知其然而不知其所以然的程序员，要有充分的好奇心去学习它，带着学习让我们受益的心态去做和研究自己感兴趣的东西是一件非常快乐的事情，希望我可以把我的快乐带给每一位看文章的小伙伴，也希望你多多给我提出意见，让我们一起在学习的路上共同发现和成长，2107年欢迎你和我一起做一个不断努力学习的知识分子</p><p></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/20/同步回调函数与异步回调函数示例/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          同步回调函数与异步回调函数示例
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/20/DOM，浏览器，javascript，html之间的关系/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DOM，浏览器，javascript，html之间的关系</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 刘伟坤
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
