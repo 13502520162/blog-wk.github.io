@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>搭建Hexo博客并部署到Github | 刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、GitHub端 首先注册个GitHub的帐号好注册完成后新建一个项目过程如下：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建Hexo博客并部署到Github">
+<meta property="og:url" content="http://yoursite.com/2015/04/16/搭建Hexo博客并部署到Github/index.html">
+<meta property="og:site_name" content="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站">
+<meta property="og:description" content="一、GitHub端 首先注册个GitHub的帐号好注册完成后新建一个项目过程如下：">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/1003956/201702/1003956-20170211230836963-1260943862.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/1003956/201702/1003956-20170211230904697-2032257532.png">
+<meta property="og:image" content="http://common.cnblogs.com/images/copycode.gif">
+<meta property="og:image" content="http://common.cnblogs.com/images/copycode.gif">
+<meta property="og:updated_time" content="2017-07-08T08:06:17.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建Hexo博客并部署到Github">
+<meta name="twitter:description" content="一、GitHub端 首先注册个GitHub的帐号好注册完成后新建一个项目过程如下：">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/1003956/201702/1003956-20170211230836963-1260943862.png">
+  
+    <link rel="alternative" href="/atom.xml" title="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://www.sxit.club/img/lwk.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.sxit.club/img/lwk.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">刘伟坤</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.sxwl.pw">面试宝典</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">刘伟坤</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.sxit.club/img/lwk.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">刘伟坤</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-搭建Hexo博客并部署到Github" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/16/搭建Hexo博客并部署到Github/" class="article-date">
+  	<time datetime="2015-04-15T22:15:43.000Z" itemprop="datePublished">2015-04-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      搭建Hexo博客并部署到Github
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h3>一、GitHub端</h3><p></p>
+<p>首先注册个GitHub的帐号</p><br><p>好注册完成后新建一个项目过程如下：</p><br><a id="more"></a><br><div id="cnblogs_post_body"><div class="cnblogs_Highlighter sh-gutter"><br><div><div id="highlighter_128735" class="syntaxhighlighter  javascript"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript plain">参考：</code></div></div></td></tr></tbody></table></div></div><br></div><br><p><a href="http://www.jianshu.com/p/a67792d93682" target="_blank" rel="external">http://www.jianshu.com/p/a67792d93682</a></p><br><p><a href="http://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html" target="_blank" rel="external">http://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html</a></p><br><p><a href="https://help.github.com/articles/cloning-a-repository/" target="_blank" rel="external">https://help.github.com/articles/cloning-a-repository/</a></p><br><p><a href="http://lijialalala.github.io/2016/04/05/hexoxo-usage/" target="_blank" rel="external">http://lijialalala.github.io/2016/04/05/hexoxo-usage/</a></p><br><p>&nbsp;</p><br><h3>一、GitHub端</h3><br><p>首先注册个GitHub的帐号</p><br><p>好注册完成后新建一个项目过程如下：</p><br><ol><br><li><br><p>点击New repository</p><br><div class="image-package"><iframe id="iframe_0.48829602535916394" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22https://github.com/xunuosi/img/blob/master/create_github_blog/1.png?raw=true&amp;_=6390235%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.48829602535916394',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 244px; height: 189px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">新建工程</div><br><br><br><br><br></div><br><br><br><br><br></li><br><li><br><p>新建项目时，关于项目的名称一定要按照”你的GitHub用户名.github.io”的格式，切记、切记、切记。重要的事情说三遍！</p>
+
+
+
+
+<p></p></li><p></p>
+<p></p></ol><p></p>
+<div class="image-package"><iframe id="iframe_0.04890769034733178" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22https://github.com/xunuosi/img/blob/master/create_github_blog/2.png?raw=true&amp;_=6390235%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.04890769034733178',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 770px; height: 638px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">新建工程2</div>
+
+
+
+
+<p></p></div><p></p>
+<p><ol></ol></p>
+<li>新建完成后点击Settings如图所示：</li>
+
+
+
+
+<p></p>
+<div class="image-package"><iframe id="iframe_0.5124544010776859" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22https://github.com/xunuosi/img/blob/master/create_github_blog/3.png?raw=true&amp;_=6390235%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.5124544010776859',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 283px; height: 58px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">Settings</div>
+
+
+
+
+<p></p></div><p></p>
+<p><ol></ol></p>
+<li>进入页面后在下半部分找到如图所示的位置点击<code>Launch automatic page generator</code>按钮。</li>
+
+
+
+
+<p></p>
+<div class="image-package"><iframe id="iframe_0.01690749578579065" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22https://github.com/xunuosi/img/blob/master/create_github_blog/4.png?raw=true&amp;_=6390235%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.01690749578579065',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 793px; height: 461px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">Settings2</div>
+
+
+
+
+<p></p></div><p></p>
+<p><ol></ol></p>
+<li>接下来就是一些简单配置页面信息，按图操作就可以了，很简单。</li>
+
+
+
+
+<p></p>
+<div class="image-package"><iframe id="iframe_0.3973307077185646" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22https://github.com/xunuosi/img/blob/master/create_github_blog/5.png?raw=true&amp;_=6390235%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.3973307077185646',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 848px; height: 814px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">配置页面</div>
+
+
+
+
+<p></p></div><p></p>
+<div class="image-package"><iframe id="iframe_0.25945649099343737" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22https://github.com/xunuosi/img/blob/master/create_github_blog/6.png?raw=true&amp;_=6390235%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.25945649099343737',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 848px; height: 171px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">配置页面</div>
+
+
+
+
+<p></p></div><p></p>
+<p>6.以上都配置完成后，GitHub端的配置就结束了，此时你输入[yourGitHubName].github.io就应该看到如下的界面，如果看到了恭喜你，第一阶段的配置您已经完成了～</p><br><div class="image-package"><iframe id="iframe_0.42579480133996683" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22https://raw.githubusercontent.com/xunuosi/img/3b42ee835fbe781ede1c517e2c9643c09b850842/create_github_blog/7.png?_=6390235%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.42579480133996683',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 848px; height: 461px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">配置页面</div><br><br><br><br><br></div><br><div class="image-package"><br><h3>二、安装Node.js和初始化hexo</h3><br><ul><br><li>下载安装Node.js</li><br><br><br><br></ul><br><p><a href="https://nodejs.org/en/" target="_blank">下载地址</a></p><br><ul><br><li><br><p>安装Hexo<br>安装好Node.js以后使用它的命令行编译器：</p><br><div class="image-package"><iframe id="iframe_0.9704083668595733" src="data:text/html;charset=utf8,%3Cstyle%3Ebody%7Bmargin:0;padding:0%7D%3C/style%3E%3Cimg%20id=%22img%22%20src=%22https://raw.githubusercontent.com/xunuosi/img/a658e2cf264cbc6bff707254d1f225bfbbc25c7c/create_github_blog/8.png?_=6390235%22%20style=%22border:none;max-width:848px%22%3E%3Cscript%3Ewindow.onload%20=%20function%20()%20%7Bvar%20img%20=%20document.getElementById('img');%20window.parent.postMessage(%7BiframeId:'iframe_0.9704083668595733',width:img.width,height:img.height%7D,%20'http://www.cnblogs.com');%7D%3C/script%3E" style="border: none; width: 228px; height: 43px;" frameborder="0" scrolling="no"></iframe><br><br><div class="image-caption">命令行编译器</div><br><br><br><br><br></div><br><p><br>然后执行以下这条安装Hexo的命令</p><br><blockquote><br><p>$ npm install -g hexo-cli</p>
+
+
+
+
+<p></p></blockquote><p></p>
+<p></p></li><p></p>
+<li><br><p>初始化<br>安装完成后，需要建立一个文件夹（如hexo），执行以下指令(在hexo路径下)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。</p><br><blockquote><br><p>hexo init</p><br><br><br><br><br></blockquote><br><br><br><br><br></li><br><li><br><p>修改hexo配置的文件，在新建的hexo文件夹下找到<code>_config.yml</code>这个文件，然后使用如notepad++之类的文本编辑器打开。该文件夹需要修改的位置如下所示：</p><br><ul><br><li><ol><br><li><br><p>Under your repository name, click&nbsp;Clone or download. &nbsp;<img src="http://images2015.cnblogs.com/blog/1003956/201702/1003956-20170211230836963-1260943862.png" alt=""></p><br><p>&nbsp;</p><br><br><br><br></li><br><li><br><p>&nbsp;In the Clone with HTTPs section, click&nbsp;<span class="octicon octicon-clippy" title="The clipboard icon ">to copy the clone URL for the repository.&nbsp;<img src="http://images2015.cnblogs.com/blog/1003956/201702/1003956-20170211230904697-2032257532.png" alt=""></span></p><br><p>&nbsp;</p><br><br><br><br></li>
+
+
+
+<p></p></ol></li><p></p>
+<p></p></ul><p></p>
+<p></p></li><p></p>
+<p></p></ul><p></p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码" target="_blank" rel="external"><img src="//common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div><br><pre><span style="color: #000000;"># Hexo Configuration<br>## Docs: https:</span><span style="color: #008000;">//</span><span style="color: #008000;">hexo.io/docs/configuration.html</span><br>## Source: https:<span style="color: #008000;">//</span><span style="color: #008000;">github.com/hexojs/hexo/</span><br><span style="color: #000000;"><br># Site<br>title: Notes For Yin Qin<br>subtitle:<br>description:<br>author: Sylar Yin<br>language: zh</span>-<span style="color: #000000;">CN<br>timezone:<br><br># URL<br>## If your site is put </span><span style="color: #0000ff;">in</span> a subdirectory, set url as ‘<a href="http://yoursite.com/child">http://yoursite.com/child</a>‘ and root as ‘/child/‘<span style="color: #000000;"><br>url: http:</span><span style="color: #008000;">//</span><span style="color: #008000;">yoursite.com</span><br>root: /<span style="color: #000000;"><br>permalink: :year</span>/:month/:day/:title/<span style="color: #000000;"><br>permalink_defaults:<br><br># Directory<br>source_dir: source<br>public_dir: public<br>tag_dir: tags<br>archive_dir: archives<br>category_dir: categories<br>code_dir: downloads</span>/code<br><span style="color: #000000;">i18n_dir: :lang<br>skip_render:<br><br># Writing<br>new_post_name: :title.md # File name of </span><span style="color: #0000ff;">new</span><span style="color: #000000;"> posts<br>default_layout: post<br>titlecase: </span><span style="color: #0000ff;">false</span><span style="color: #000000;"> # Transform title into titlecase<br>external_link: </span><span style="color: #0000ff;">true</span> # Open external links <span style="color: #0000ff;">in</span> <span style="color: #0000ff;">new</span><span style="color: #000000;"> tab<br>filename_case: </span>0<span style="color: #000000;"><br>render_drafts: </span><span style="color: #0000ff;">false</span><span style="color: #000000;"><br>post_asset_folder: </span><span style="color: #0000ff;">false</span><span style="color: #000000;"><br>relative_link: </span><span style="color: #0000ff;">false</span><span style="color: #000000;"><br>future: </span><span style="color: #0000ff;">true</span><span style="color: #000000;"><br>highlight:<br>  enable: </span><span style="color: #0000ff;">true</span><span style="color: #000000;"><br>  line_number: </span><span style="color: #0000ff;">true</span><span style="color: #000000;"><br>  auto_detect: </span><span style="color: #0000ff;">false</span><span style="color: #000000;"><br>  tab_replace:<br><br># Category </span>&amp;<span style="color: #000000;"> Tag<br>default_category: uncategorized<br>category_map:<br>tag_map:<br><br># Date </span>/<span style="color: #000000;"> Time format<br>## Hexo uses Moment.js to parse and display date<br>## You can customize the date format as defined </span><span style="color: #0000ff;">in</span><span style="color: #000000;"><br>## http:</span><span style="color: #008000;">//</span><span style="color: #008000;">momentjs.com/docs/#/displaying/format/</span><br>date_format: YYYY-MM-<span style="color: #000000;">DD<br>time_format: HH:mm:ss<br><br># Pagination<br>## Set per_page to </span>0<span style="color: #000000;"> to disable pagination<br>per_page: </span>10<span style="color: #000000;"><br>pagination_dir: page<br><br># Extensions<br>## Plugins: https:</span><span style="color: #008000;">//</span><span style="color: #008000;">hexo.io/plugins/</span><br>## Themes: https:<span style="color: #008000;">//</span><span style="color: #008000;">hexo.io/themes/</span><br><span style="color: #000000;">theme: landscape<br><br># Deployment<br>## Docs: https:</span><span style="color: #008000;">//</span><span style="color: #008000;">hexo.io/docs/deployment.html</span><br><span style="color: #000000;">deploy:<br>  type: git<br>  repository: https:</span><span style="color: #008000;">//</span><span style="color: #008000;">github.com/NotesForYQ/NotesForYQ.github.io.git</span><br>  branch: master</pre><br><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码" target="_blank" rel="external"><img src="//common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div></div><br><p>&nbsp;</p><br><pre class="hljs crmsh"><code class="crmsh"><span class="hljs-comment">&nbsp;</span></code></pre><br><p>这里强调一下配置文件编写的时候一定是键值对的形式，”:”冒号后有一个空格，切记、切记、切记！这里提供一个<a href="http://www.yamllint.com/" target="_blank">网站</a>用于检测你输入的语法是否正确。</p><br><ul><br><li>预览配置效果<br>两个命令即可完成静态页面的生成和预览<code>$ hexo generate</code>和<code>$ hexo server</code>，以下是命令的简写形式：<br><blockquote><br><p>hexo g<br>hexo s</p><br><br><br><br><br></blockquote><br><br><br><br><br></li><br><br><br><br><br></ul><br><p>输入命令以后在浏览器器中输入&nbsp;<code>localhost:4000</code>&nbsp;就可以看见预览的静态网页了，此时在命令行编译器中使用&nbsp;<code>Ctrl+C</code>&nbsp;就可以退出预览。<br>最后将编译好的网页代码部署到GitHub中就大功告成了。命令为&nbsp;<code>$ hexo deploy</code></p><br><blockquote><br><p>hexo d</p><br><br><br><br><br></blockquote><br><p>此时可能会提醒你Git命令不能识别之类的错误，这就是我说的安装配置时的最后一个坑，此时你需要在命令行中输入以下语句来完成Install&nbsp;<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank">hexo-deployer-git</a>.</p><br><blockquote><br><p>$ npm install hexo-deployer-git –save</p><br><br><br><br><br></blockquote><br><p>好执行完成以后，你再使用<code>$ hexo deploy</code>就可以部署到你的GitHub仓中了，小伙伴们部署完以后赶紧查看一下自己的域名，网页已经变化了啊～</p><br><br><br><br></div></div>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/20/分享一些自己的学习过程和学习方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          分享一些自己的学习过程和学习方法（来自daimajia）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/09/一个过来人告诉你怎么学javascript/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一个过来人告诉你怎么学javascript</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 刘伟坤
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
