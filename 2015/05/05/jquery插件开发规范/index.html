@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jquery插件开发规范 | 刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;nbsp;jQuery插件开发方式主要有三种：通过$.extend()来扩展jQuery通过$.fn 向jQuery添加新的方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery插件开发规范">
+<meta property="og:url" content="http://yoursite.com/2015/05/05/jquery插件开发规范/index.html">
+<meta property="og:site_name" content="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站">
+<meta property="og:description" content="&amp;nbsp;jQuery插件开发方式主要有三种：通过$.extend()来扩展jQuery通过$.fn 向jQuery添加新的方法">
+<meta property="og:updated_time" content="2017-07-08T06:14:00.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery插件开发规范">
+<meta name="twitter:description" content="&amp;nbsp;jQuery插件开发方式主要有三种：通过$.extend()来扩展jQuery通过$.fn 向jQuery添加新的方法">
+  
+    <link rel="alternative" href="/atom.xml" title="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://www.sxit.club/img/lwk.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+
+  <script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://www.sxit.club/img/lwk.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">刘伟坤</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.sxwl.pw">面试宝典</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">刘伟坤</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="http://www.sxit.club/img/lwk.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">刘伟坤</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-jquery插件开发规范" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/05/jquery插件开发规范/" class="article-date">
+  	<time datetime="2015-05-05T11:25:21.000Z" itemprop="datePublished">2015-05-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jquery插件开发规范
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;</p><br><h2>jQuery插件开发方式主要有三种：</h2><br><ul><br><li><br><p>通过$.extend()来扩展jQuery</p><br></li><br><li><br><p>通过$.fn 向jQuery添加新的方法</p><br></li><br><li><br><a id="more"></a><br><p>通过$.widget()应用jQuery UI的部件工厂方式创建</p><br><p>第一种方式太简单，仅仅是在jQuery命名空间或者理解成jQuery身上添加了一个静态方法而已，所以我们调用通过$.extend()添加的函数时直接通过$符号调用（$.myfunction()）而不需要选中DOM元素($(‘#example’).myfunction())，这种方式无法利用jQuery强大的选择器带来的便利，要处理DOM元素以及将插件更好地运用于所选择的元素身上，还是需要使用第二种开发方式<br>通常我们使用第二种方法来进行简单插件开发，说简单是相对于第三种方式。第三种方式是用来开发更高级jQuery部件的，该模式开发出来的部件带有很多jQuery内建的特性，比如插件的状态信息自动保存，各种关于插件的常用方法等</p>
+
+<p></p></li><p></p>
+<p></p></ul><p></p>
+<p></p><p>请按照以下的方式（安全结构良好的代码）编写插件</p><p></p>
+<div class="highlight highlight-source-js"><br><pre>;(<span class="pl-k">function(<span class="pl-smi">$,<span class="pl-c1">window,<span class="pl-c1">document,<span class="pl-c1">undefined){<br>    <span class="pl-c"><span class="pl-c">//我们的代码。。<br>    <span class="pl-c"><span class="pl-c">//blah blah blah…<br>})(jQuery,<span class="pl-c1">window,<span class="pl-c1">document);</span></span></span></span></span></span></span></span></span></span></span></pre><br></div><br><p>例：</p><br><div class="highlight highlight-source-js"><br><pre>;(<span class="pl-k">function(<span class="pl-smi">$, <span class="pl-c1">window, <span class="pl-c1">document,<span class="pl-c1">undefined) {<br>    <span class="pl-c"><span class="pl-c">//定义Beautifier的构造函数<br>    <span class="pl-k">var <span class="pl-en">Beautifier <span class="pl-k">= <span class="pl-k">function(<span class="pl-smi">ele, <span class="pl-smi">opt) {<br>        <span class="pl-c1">this.<span class="pl-smi">$element <span class="pl-k">= ele,<br>        <span class="pl-c1">this.<span class="pl-smi">defaults <span class="pl-k">= {<br>            <span class="pl-s"><span class="pl-pds">‘color<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘red<span class="pl-pds">‘,<br>            <span class="pl-s"><span class="pl-pds">‘fontSize<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘12px<span class="pl-pds">‘,<br>            <span class="pl-s"><span class="pl-pds">‘textDecoration<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘none<span class="pl-pds">‘<br>        },<br>        <span class="pl-c1">this.<span class="pl-c1">options <span class="pl-k">= <span class="pl-smi">$.<span class="pl-en">extend({}, <span class="pl-c1">this.<span class="pl-smi">defaults, opt)<br>    }<br>    <span class="pl-c"><span class="pl-c">//定义Beautifier的方法<br>    <span class="pl-smi">Beautifier.<span class="pl-c1">prototype <span class="pl-k">= {<br>        <span class="pl-en">beautify<span class="pl-k">: <span class="pl-k">function() {<br>            <span class="pl-k">return <span class="pl-c1">this.<span class="pl-smi">$element.<span class="pl-en">css({<br>                <span class="pl-s"><span class="pl-pds">‘color<span class="pl-pds">‘<span class="pl-k">: <span class="pl-c1">this.<span class="pl-c1">options.<span class="pl-c1">color,<br>                <span class="pl-s"><span class="pl-pds">‘fontSize<span class="pl-pds">‘<span class="pl-k">: <span class="pl-c1">this.<span class="pl-c1">options.<span class="pl-c1">fontSize,<br>                <span class="pl-s"><span class="pl-pds">‘textDecoration<span class="pl-pds">‘<span class="pl-k">: <span class="pl-c1">this.<span class="pl-c1">options.<span class="pl-c1">textDecoration<br>            });<br>        }<br>    }<br>    <span class="pl-c"><span class="pl-c">//在插件中使用Beautifier对象<br>    <span class="pl-smi">$.<span class="pl-smi">fn.<span class="pl-en">myPlugin <span class="pl-k">= <span class="pl-k">function(<span class="pl-smi">options) {<br>        <span class="pl-c"><span class="pl-c">//创建Beautifier的实体<br>        <span class="pl-k">var beautifier <span class="pl-k">= <span class="pl-k">new <span class="pl-en">Beautifier(<span class="pl-c1">this, options);<br>        <span class="pl-c"><span class="pl-c">//调用其方法<br>        <span class="pl-k">return <span class="pl-smi">beautifier.<span class="pl-en">beautify();<br>    }<br>})(jQuery, <span class="pl-c1">window, <span class="pl-c1">document);</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br></div><br><p><br><br></p><br><h2><a id="user-content-编写中的注意事项" class="anchor" href="https://github.com/woodens/experience/blob/master/jquery%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md#编写中的注意事项" target="_blank" rel="external"></a>编写中的注意事项：</h2><br><ul><br><ul><br><li>在代码开头加一个分号<br>用来充当自调用匿名函数的第一对括号容易与别人定义的函数相连，中间没有分号造成我们的代码无法正常解析进而报错,所以好的做法是我们在代码开头加一个分号，这在任何时候都是一个好的习惯</li><br><li>将系统变量以参数形式传递到插件内部可以提高访问速度<br>至于这个undefined，稍微有意思一点，为了得到没有被修改的undefined，我们并没有传递这个参数，但却在接收时接收了它，因为实际并没有传，所以‘undefined’那个位置接收到的就是真实的’undefined’了</li><br><li>命名规范<br><ul><br><li>a:变量及函数命名 一般使用驼峰命名法（CamelCase）</li><br><li>b:在JavaScript中多用单引号</li><br><br></ul><br><br></li><br><li>插件开发请使用面向对象思维<br>因为如果不这样，你可能需要一个方法的时候就去定义一个function，当需要另外一个方法的时候，再去随便定义一个function，同样，需要一个变量的时候，毫无规则地定义一些散落在代码各处的变量</li><br><li>保护好默认参数<br><ul><br><li>示例代码a</li><br><br></ul><br><div class="highlight highlight-source-js"><br><pre><span class="pl-k">var defaults <span class="pl-k">= {<br>    <span class="pl-s"><span class="pl-pds">‘color<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘red<span class="pl-pds">‘,<br>    <span class="pl-s"><span class="pl-pds">‘fontSize<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘12px<span class="pl-pds">‘<br>};<br><span class="pl-k">var settings <span class="pl-k">= <span class="pl-smi">$.<span class="pl-en">extend(defaults, options);</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br></div><br><ul><br><li>示例代码b</li><br></ul><br><div class="highlight highlight-source-js"><br><pre><span class="pl-k">var defaults <span class="pl-k">= {<br>    <span class="pl-s"><span class="pl-pds">‘color<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘red<span class="pl-pds">‘,<br>    <span class="pl-s"><span class="pl-pds">‘fontSize<span class="pl-pds">‘<span class="pl-k">: <span class="pl-s"><span class="pl-pds">‘12px<span class="pl-pds">‘<br>};<br><span class="pl-k">var settings <span class="pl-k">= <span class="pl-smi">$.<span class="pl-en">extend({},defaults, options);<span class="pl-c"><span class="pl-c">//将一个空对象做为第一个参数</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre><br></div><br>示例代码a中调用extend时会将defaults的值改变，这样不好，因为它作为插件因有的一些东西应该维持原样，另外就是如果你在后续代码中还要使用这些默认值的话，当你再次访问它时它已经被用户传进来的参数更改了<br>示例代码b中将一个新的空对象做为$.extend的第一个参数，defaults和用户传递的参数对象紧随其后，这样做的好处是所有值被合并到这个空对象上，保护了插件里面的默认值</li><br><li>让插件接收参数<br>一个强劲的插件是可以让使用者随意定制的，这要求我们提供在编写插件时就要考虑得全面些，尽量提供合适的参数</li><br><li>支持链式调用<br>要让插件不打破jQuery支持链式调用的特性（选择好DOM元素后可以不断地调用其他方法），只需return一下即可</li><br><br></ul><br></ul>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/10/javascript回调函数笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          javascript回调函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/05/你有必要知道的 25 个 JavaScript 面试题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你有必要知道的 25 个 JavaScript 面试题</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2017 刘伟坤
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/smackgg/hexo-theme-smackdown" target="_blank">Smackdown</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="/js/main.js"></script>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
