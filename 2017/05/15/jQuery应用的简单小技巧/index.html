@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>jQuery应用的简单小技巧 | 刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这些是可以帮助提高你jQuery应用的简单小技巧。回到顶部按钮图片预加载判断图片是否加载完自动修补破损图像Hover切换class类禁用输入停止正在加载的链接toggle fade/slide简单的手风琴效果使两个DIV同等高度在浏览器标签/新窗口打开外部链接根据文本获取元素可见变化的触发Ajax调用错误处理链式操作回到顶部按钮利用jQuery里的animate和scrollTop方法，你便不需要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery应用的简单小技巧">
+<meta property="og:url" content="http://yoursite.com/2017/05/15/jQuery应用的简单小技巧/index.html">
+<meta property="og:site_name" content="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站">
+<meta property="og:description" content="这些是可以帮助提高你jQuery应用的简单小技巧。回到顶部按钮图片预加载判断图片是否加载完自动修补破损图像Hover切换class类禁用输入停止正在加载的链接toggle fade/slide简单的手风琴效果使两个DIV同等高度在浏览器标签/新窗口打开外部链接根据文本获取元素可见变化的触发Ajax调用错误处理链式操作回到顶部按钮利用jQuery里的animate和scrollTop方法，你便不需要">
+<meta property="og:updated_time" content="2017-07-13T12:54:28.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery应用的简单小技巧">
+<meta name="twitter:description" content="这些是可以帮助提高你jQuery应用的简单小技巧。回到顶部按钮图片预加载判断图片是否加载完自动修补破损图像Hover切换class类禁用输入停止正在加载的链接toggle fade/slide简单的手风琴效果使两个DIV同等高度在浏览器标签/新窗口打开外部链接根据文本获取元素可见变化的触发Ajax调用错误处理链式操作回到顶部按钮利用jQuery里的animate和scrollTop方法，你便不需要">
+  
+    <link rel="alternative" href="/atom.xml" title="刘伟坤个人博客 - 一个梦想成为web前端开发人员的个人博客网站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/html5_1color.jpg">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/lwk.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">刘伟坤</a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/">主页</a></li>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/13502520162" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/u/2433275163" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1834183435&site=qq&menu=yes"" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sxwl.pw/">面试宝典</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱游戏,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">刘伟坤</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/lwk.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">刘伟坤</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/13502520162" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/u/2433275163" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1834183435&site=qq&menu=yes"" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-jQuery应用的简单小技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2017/05/15/jQuery应用的简单小技巧/" class="article-date">
+      <time datetime="2017-05-15T02:15:43.000Z" itemprop="datePublished">2017-05-15</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery应用的简单小技巧
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>这些是可以帮助提高你jQuery应用的简单小技巧。</p><br><p><a href="#a1" target="_self" rel="nofollow">回到顶部按钮</a></p><br><p><a href="#a2" target="_self" rel="nofollow">图片预加载</a></p><br><p><a href="#a3" target="_self" rel="nofollow">判断图片是否加载完</a></p><br><p><a href="#a4" target="_self" rel="nofollow">自动修补破损图像</a></p><br><p><a href="#a5" target="_self" rel="nofollow">Hover切换class类</a></p><br><p><a href="#a6" target="_self" rel="nofollow">禁用输入</a></p><br><p><a href="#a7" target="_self" rel="nofollow">停止正在加载的链接</a></p><br><p><a href="#a8" target="_self" rel="nofollow">toggle fade/slide</a></p><br><p><a href="#a9" target="_self" rel="nofollow">简单的手风琴效果</a></p><br><p><a href="#a10" target="_self" rel="nofollow">使两个DIV同等高度</a></p><br><p><a href="#a11" target="_self" rel="nofollow">在浏览器标签/新窗口打开外部链接</a></p><br><p><a href="#a12" target="_self" rel="nofollow">根据文本获取元素</a></p><br><p><a href="#a13" target="_self" rel="nofollow">可见变化的触发</a></p><br><p><a href="#a14" target="_self" rel="nofollow">Ajax调用错误处理</a></p><br><p><a href="#a15" target="_self" rel="nofollow">链式操作</a></p><br><p><a name="a1">回到顶部按钮</a></p><br><p>利用jQuery里的animate和scrollTop方法，你便不需要使用插件创建简单的滚动到顶部动画。</p><br><div class="codecolorer-container html4strict default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br></div></td><td><div class="html4strict codecolorer">// Back to top <br><br>$(‘.top’).click(function (e) { <br><br>&nbsp; e.preventDefault(); <br><br>&nbsp; $(‘html, body’).animate({scrollTop: 0}, 800); <br><br>}); <br><br><span class="sc-1">&lt;!– Create an anchor tag –&gt;</span> <br><br><span class="sc2">&lt;<a href="http://december.com/html/4/element/a.html" target="_blank" rel="external"><span class="kw2">a</span></a> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">“top”</span> <span class="kw3">href</span><span class="sy0">=</span><span class="st0">“#”</span>&gt;</span>Back to top<span class="sc2">&lt;<span class="sy0">/</span><a href="http://december.com/html/4/element/a.html" target="_blank" rel="external"><span class="kw2">a</span></a>&gt;</span></div></td></tr></tbody></table></div><br><p>通过scrollTop的值来改变你想要滚动到的位置。其实你就是做了：在接下来的800毫秒中让页面滚动，直到它滚动到文档的顶部。</p><br><p>备注：来看一些scrollTop的调皮行为 。</p><br><p><a name="a2">图片预加载</a></p><br><p>如果你的网页使用了很多隐藏图片文件（例如：鼠标悬停展示的图片），那么图片的预加载是有意义的：</p><br><div class="codecolorer-container html4strict default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br></div></td><td><div class="html4strict codecolorer">$.preloadImages = function () { <br><br>&nbsp; for (var i = 0; i <span class="sc2">&lt; arguments.length; i++<span class="br0">)</span> <span class="br0">{</span> </span><br><br><span class="sc2"> &nbsp; &nbsp;$<span class="br0">(</span><span class="st0">‘&lt;img&gt;</span></span>‘).attr(‘src’, arguments[i]); <br><br>&nbsp; } <br><br>}; &nbsp;<br><br>$.preloadImages(‘img/hover-on.png’, ‘img/hover-off.png’);</div></td></tr></tbody></table></div><br><p><a name="a3">判断图片是否加载完</a></p><br><p>有时候你可能需要检查图像是否已经加载完成，以便于可以继续执行相应的js代码：</p><br><div class="codecolorer-container html4strict default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br></div></td><td><div class="html4strict codecolorer">$(‘img’).load(function () { <br><br>&nbsp; console.log(‘image load successful’); <br><br>});</div></td></tr></tbody></table></div><br><p>你还可以检查一个特定的图片是否加载完并且被带有Id或者class的&lt; img &gt;标签代替。</p><br><p><a name="a4">自动修补破损图像</a></p><br><p>如果你碰巧发现在你的网站上发现有破损的图像链接，一个个去替代他它们是痛苦的简直是太痛苦了。这个简单的代码可以节省很多的麻烦：</p><br><div class="codecolorer-container html4strict default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br></div></td><td><div class="html4strict codecolorer">$(‘img’).on(‘error’, function () { <br><br>&nbsp; if(!$(this).hasClass(‘broken-image’)) { <br><br>&nbsp; &nbsp; $(this).prop(‘src’, ‘img/broken.png’).addClass(‘broken-image’); <br><br>&nbsp; } <br><br>});</div></td></tr></tbody></table></div><br><p>即使你没有任何断开的链接，加入这代码也不会有任何影响。</p><br><p><a name="a5">Hover切换class类</a></p><br><p>比方说，当用户将鼠标悬停在你页面上的元素时，你想改变其视觉效果。当用户鼠标悬停在元素上，你可以在该元素上添加一个class类，当鼠标停止悬停事件时移除此class类：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span><span class="st_h">‘.btn’</span><span class="br0">)</span><span class="sy0">.</span>hover<span class="br0">(</span><span class="kw2">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; $<span class="br0">(</span>this<span class="br0">)</span><span class="sy0">.</span>addClass<span class="br0">(</span><span class="st_h">‘hover’</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="br0">}</span><span class="sy0">,</span> <span class="kw2">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; $<span class="br0">(</span>this<span class="br0">)</span><span class="sy0">.</span>removeClass<span class="br0">(</span><span class="st_h">‘hover’</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>如果你想要一个更简单的方式使用toggleClass方法，则仅仅需要添加必要的CSS：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span><span class="st_h">‘.btn’</span><span class="br0">)</span><span class="sy0">.</span>hover<span class="br0">(</span><span class="kw2">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; $<span class="br0">(</span>this<span class="br0">)</span><span class="sy0">.</span>toggleClass<span class="br0">(</span><span class="st_h">‘hover’</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>备注：CSS在这种情况下使用是一个快速的解决方案，但要知道这点知识依旧是值得去了解下的。</p><br><p><a name="a6">禁用输入</a></p><br><p>有时你可能需要用表单的提交按钮或者某个输入框直到用户执行了某个动作（比如：检查“我已阅读条款”复选框）。在你的输入框上设置disabled属性，然后当你需要的时候启用该属性：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span><span class="st_h">‘input[type=”submit”]’</span><span class="br0">)</span><span class="sy0">.</span>prop<span class="br0">(</span><span class="st_h">‘disabled’</span><span class="sy0">,</span> <span class="kw4">true</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>你需要做的只是需要在输入框上再次运行prop方法，但设置的被禁用值是false：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span><span class="st_h">‘input[type=”submit”]’</span><span class="br0">)</span><span class="sy0">.</span>prop<span class="br0">(</span><span class="st_h">‘disabled’</span><span class="sy0">,</span> <span class="kw4">false</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p><a name="a7">停止正在加载的链接</a></p><br><p>有时你不想链接到特定的网页或者重新载入页面；你可能想让他们做一些其他事情，如触发一些其他的脚本。这是防止违约行动的技巧：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span><span class="st_h">‘a.no-link’</span><span class="br0">)</span><span class="sy0">.</span>click<span class="br0">(</span><span class="kw2">function</span> <span class="br0">(</span>e<span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; e<span class="sy0">.</span>preventDefault<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p><a name="a8">toggle fade/slide</a></p><br><p>滑动和淡入/淡出 是我们在jQuery中经常大量使用的动画。你可能仅仅想在用户做某些点击事件的时候显示一个元素，这时候需要淡入/淡出或者滑动方法。但是如果你需要那个元素在你第一次点击的时候出现，在第二次点击的时候消失，代码如下：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></div></td><td><div class="php codecolorer"><span class="co1">// Fade </span><br><br>$<span class="br0">(</span><span class="st_h">‘.btn’</span><span class="br0">)</span><span class="sy0">.</span>click<span class="br0">(</span><span class="kw2">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; $<span class="br0">(</span><span class="st_h">‘.element’</span><span class="br0">)</span><span class="sy0">.</span>fadeToggle<span class="br0">(</span><span class="st_h">‘slow’</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span> <br><br>&nbsp;<br><br><span class="co1">// Toggle </span><br><br>$<span class="br0">(</span><span class="st_h">‘.btn’</span><span class="br0">)</span><span class="sy0">.</span>click<span class="br0">(</span><span class="kw2">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; $<span class="br0">(</span><span class="st_h">‘.element’</span><span class="br0">)</span><span class="sy0">.</span>slideToggle<span class="br0">(</span><span class="st_h">‘slow’</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p><a name="a9">简单的手风琴效果</a></p><br><p>这是个简单快速的方法创建一个手风琴效果：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br></div></td><td><div class="php codecolorer"><span class="co1">// Close all panels </span><br><br>$<span class="br0">(</span><span class="st_h">‘#accordion’</span><span class="br0">)</span><span class="sy0">.</span>find<span class="br0">(</span><span class="st_h">‘.content’</span><span class="br0">)</span><span class="sy0">.</span>hide<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> &nbsp;<br><br><span class="co1">// Accordion </span><br><br>$<span class="br0">(</span><span class="st_h">‘#accordion’</span><span class="br0">)</span><span class="sy0">.</span>find<span class="br0">(</span><span class="st_h">‘.accordion-header’</span><span class="br0">)</span><span class="sy0">.</span>click<span class="br0">(</span><span class="kw2">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; <span class="kw2">var</span> <a href="http://www.php.net/next" target="_blank" rel="external"><span class="kw3">next</span></a> <span class="sy0">=</span> $<span class="br0">(</span>this<span class="br0">)</span><span class="sy0">.</span><a href="http://www.php.net/next" target="_blank" rel="external"><span class="kw3">next</span></a><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <br><br>&nbsp; <a href="http://www.php.net/next" target="_blank" rel="external"><span class="kw3">next</span></a><span class="sy0">.</span>slideToggle<span class="br0">(</span><span class="st_h">‘fast’</span><span class="br0">)</span><span class="sy0">;</span> <br><br>&nbsp; $<span class="br0">(</span><span class="st_h">‘.content’</span><span class="br0">)</span><span class="sy0">.</span>not<span class="br0">(</span><a href="http://www.php.net/next" target="_blank" rel="external"><span class="kw3">next</span></a><span class="br0">)</span><span class="sy0">.</span>slideUp<span class="br0">(</span><span class="st_h">‘fast’</span><span class="br0">)</span><span class="sy0">;</span> <br><br>&nbsp; <span class="kw1">return</span> <span class="kw4">false</span><span class="sy0">;</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>通过添加这个脚本，你需要做的则是必要的HTML操作在你的页面上。</p><br><p><a name="a10">使两个DIV同等高度</a></p><br><p>有时你会想要两个DIV有相同的高度，不论它们都有什么样的内容：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span><span class="st_h">‘.div’</span><span class="br0">)</span><span class="sy0">.</span>css<span class="br0">(</span><span class="st_h">‘min-height’</span><span class="sy0">,</span> $<span class="br0">(</span><span class="st_h">‘.main-div’</span><span class="br0">)</span><span class="sy0">.</span>height<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>这个例子设置了DIV的最小高度，这意味着它的高度只可以比这个设置的高度大而不能小。然而，一个更灵活的方法是循环的一组元素，并设置将最高元素的高度作为高度：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br></div></td><td><div class="php codecolorer"><span class="kw2">var</span> <span class="re0">$columns</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st_h">‘.column’</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="kw2">var</span> height <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> <br><br><span class="re0">$columns</span><span class="sy0">.</span><a href="http://www.php.net/each" target="_blank" rel="external"><span class="kw3">each</span></a><span class="br0">(</span><span class="kw2">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; <span class="kw1">if</span> <span class="br0">(</span>$<span class="br0">(</span>this<span class="br0">)</span><span class="sy0">.</span>height<span class="br0">(</span><span class="br0">)</span> <span class="sy0">&gt;</span> height<span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; &nbsp; height <span class="sy0">=</span> $<span class="br0">(</span>this<span class="br0">)</span><span class="sy0">.</span>height<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <br><br>&nbsp; <span class="br0">}</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="re0">$columns</span><span class="sy0">.</span>height<span class="br0">(</span>height<span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>如果你想要所有的列有相同的高度：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br></div></td><td><div class="php codecolorer"><span class="kw2">var</span> <span class="re0">$rows</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st_h">‘.same-height-columns’</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="re0">$rows</span><span class="sy0">.</span><a href="http://www.php.net/each" target="_blank" rel="external"><span class="kw3">each</span></a><span class="br0">(</span><span class="kw2">function</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; $<span class="br0">(</span>this<span class="br0">)</span><span class="sy0">.</span>find<span class="br0">(</span><span class="st_h">‘.column’</span><span class="br0">)</span><span class="sy0">.</span>height<span class="br0">(</span>$<span class="br0">(</span>this<span class="br0">)</span><span class="sy0">.</span>height<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p><a name="a11">在浏览器标签/新窗口打开外部链接</a></p><br><p>在新的浏览器标签或窗口中打开外部链接，并确保在同一个标签或窗口中打开的是同一个源的链接：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span><span class="st_h">‘a[href^=”http”]’</span><span class="br0">)</span><span class="sy0">.</span>attr<span class="br0">(</span><span class="st_h">‘target’</span><span class="sy0">,</span> <span class="st_h">‘_blank’</span><span class="br0">)</span><span class="sy0">;</span> <br><br>$<span class="br0">(</span><span class="st_h">‘a[href^=”//“]’</span><span class="br0">)</span><span class="sy0">.</span>attr<span class="br0">(</span><span class="st_h">‘target’</span><span class="sy0">,</span> <span class="st_h">‘_blank’</span><span class="br0">)</span><span class="sy0">;</span> <br><br>$<span class="br0">(</span><span class="st_h">‘a[href^=”‘</span> <span class="sy0">+</span> window<span class="sy0">.</span>location<span class="sy0">.</span>origin <span class="sy0">+</span> <span class="st_h">‘“]’</span><span class="br0">)</span><span class="sy0">.</span>attr<span class="br0">(</span><span class="st_h">‘target’</span><span class="sy0">,</span> <span class="st_h">‘_self’</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>备注：window.location.origin 在IE10不工作。</p><br><p><a name="a12">根据文本获取元素</a></p><br><p>通过jQuery中的contains()选择器，你能找到一个元素内的文本内容。如果文本不存在，则这个元素将被隐藏：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br></div></td><td><div class="php codecolorer"><span class="kw2">var</span> search <span class="sy0">=</span> $<span class="br0">(</span><span class="st_h">‘#search’</span><span class="br0">)</span><span class="sy0">.</span>val<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <br><br>$<span class="br0">(</span><span class="st_h">‘div:not(:contains(“‘</span> <span class="sy0">+</span> search <span class="sy0">+</span> <span class="st_h">‘“))’</span><span class="br0">)</span><span class="sy0">.</span>hide<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p><a name="a13">可见变化的触发</a></p><br><p>当用户不再聚焦或者重新聚焦一个标签时触发javascript脚本：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span>document<span class="br0">)</span><span class="sy0">.</span>on<span class="br0">(</span><span class="st_h">‘visibilitychange’</span><span class="sy0">,</span> <span class="kw2">function</span> <span class="br0">(</span>e<span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; <span class="kw1">if</span> <span class="br0">(</span>e<span class="sy0">.</span>target<span class="sy0">.</span>visibilityState <span class="sy0">===</span> <span class="st0">“visible”</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; &nbsp; console<span class="sy0">.</span><a href="http://www.php.net/log" target="_blank" rel="external"><span class="kw3">log</span></a><span class="br0">(</span><span class="st_h">‘Tab is now in view!’</span><span class="br0">)</span><span class="sy0">;</span> <br><br>&nbsp; <span class="br0">}</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">(</span>e<span class="sy0">.</span>target<span class="sy0">.</span>visibilityState <span class="sy0">===</span> <span class="st0">“hidden”</span><span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; &nbsp; console<span class="sy0">.</span><a href="http://www.php.net/log" target="_blank" rel="external"><span class="kw3">log</span></a><span class="br0">(</span><span class="st_h">‘Tab is now hidden!’</span><span class="br0">)</span><span class="sy0">;</span> <br><br>&nbsp; <span class="br0">}</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p><a name="a14">Ajax调用错误处理</a></p><br><p>当一个Ajax调用返回一个404或500的错误时，将执行该错误处理。如果该处理未定义，则其他jQuery代码便可能不会执行了。定义一个全局Ajax错误处理程序：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span>document<span class="br0">)</span><span class="sy0">.</span>ajaxError<span class="br0">(</span><span class="kw2">function</span> <span class="br0">(</span>e<span class="sy0">,</span> xhr<span class="sy0">,</span> settings<span class="sy0">,</span> error<span class="br0">)</span> <span class="br0">{</span> <br><br>&nbsp; console<span class="sy0">.</span><a href="http://www.php.net/log" target="_blank" rel="external"><span class="kw3">log</span></a><span class="br0">(</span>error<span class="br0">)</span><span class="sy0">;</span> <br><br><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p><a name="a15">链式操作</a></p><br><p>jQuery允许通过链式操作来减轻反复查询DOM和创建多个jQuery对象的过程。比如下面是你的方法调用：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span><span class="st_h">‘#elem’</span><span class="br0">)</span><span class="sy0">.</span>show<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <br><br>$<span class="br0">(</span><span class="st_h">‘#elem’</span><span class="br0">)</span><span class="sy0">.</span>html<span class="br0">(</span><span class="st_h">‘bla’</span><span class="br0">)</span><span class="sy0">;</span> <br><br>$<span class="br0">(</span><span class="st_h">‘#elem’</span><span class="br0">)</span><span class="sy0">.</span>otherStuff<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>这代码可以通过链式大大的提高：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br></div></td><td><div class="php codecolorer">$<span class="br0">(</span><span class="st_h">‘#elem’</span><span class="br0">)</span> <br><br>&nbsp; <span class="sy0">.</span>show<span class="br0">(</span><span class="br0">)</span> <br><br>&nbsp; <span class="sy0">.</span>html<span class="br0">(</span><span class="st_h">‘bla’</span><span class="br0">)</span> <br><br>&nbsp; <span class="sy0">.</span>otherStuff<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>另一个方法是在一个可变的元素缓存（$作为前置）：</p><br><div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br></div></td><td><div class="php codecolorer"><span class="kw2">var</span> <span class="re0">$elem</span> <span class="sy0">=</span> $<span class="br0">(</span><span class="st_h">‘#elem’</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="re0">$elem</span><span class="sy0">.</span>hide<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="re0">$elem</span><span class="sy0">.</span>html<span class="br0">(</span><span class="st_h">‘bla’</span><span class="br0">)</span><span class="sy0">;</span> <br><br><span class="re0">$elem</span><span class="sy0">.</span>otherStuff<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></div></td></tr></tbody></table></div><br><p>链式和jQuery缓存方法是最好的做法，导致更短、更快的代码。</p><br>                <br>                <!--代码演示 start--><br>                                <!--代码演示 end--><br>                <p class="key-w"><br>                    <font class="iconfont"></font>标签：<a href="http://www.mxxia.com/tag/jquery%e6%8a%80%e5%b7%a7" rel="external" target="_blank">jQuery技巧</a><a href="http://www.mxxia.com/tag/%e5%9b%9e%e5%88%b0%e9%a1%b6%e9%83%a8%e6%8c%89%e9%92%ae" rel="external" target="_blank">回到顶部按钮</a><a href="http://www.mxxia.com/tag/%e6%89%8b%e9%a3%8e%e7%90%b4" rel="external" target="_blank">手风琴</a>                </p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/05/15/jQuery应用的简单小技巧/">jQuery应用的简单小技巧</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 刘伟坤 的个人博客">刘伟坤</a></p>
+        <p><span>发布时间:</span>2017年05月15日 - 10时15分</p>
+        <p><span>最后更新:</span>2017年07月13日 - 20时54分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/15/jQuery应用的简单小技巧/" title="jQuery应用的简单小技巧">http://yoursite.com/2017/05/15/jQuery应用的简单小技巧/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/15/jQuery应用的简单小技巧/　　作者: 刘伟坤" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="/2017/04/05/Mongodb从入门到精通/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mongodb从入门到精通</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2017/04/05/Mongodb从入门到精通/" title="下一篇: Mongodb从入门到精通">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/05/15/jQuery应用的简单小技巧/">jQuery应用的简单小技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/05/Mongodb从入门到精通/">Mongodb从入门到精通</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/26/Ajax简单教程/">ajax简单教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/14/Git学习笔记/">Git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/02/jquery基本操作笔记/">jquery基本操作笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/06/最全的 JavaScript 知识总结/">最全的 JavaScript 知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/16/将Jquery序列化后的表单值转换成Json/">将Jquery序列化后的表单值转换成Json</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/10/详解Javascript中的Array对象/">详解Javascript中的Array对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/详解Javascript中的Object对象/">详解Javascript中的Object对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/25/CSS“隐藏”元素的几种方法的对比/">CSS“隐藏”元素的几种方法的对比</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/同步回调函数与异步回调函数示例/">同步回调函数与异步回调函数示例</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/01/关于js中的回调函数callback/">关于js中的回调函数callback</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/20/DOM，浏览器，javascript，html之间的关系/">DOM，浏览器，javascript，html之间的关系</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/20/JavaScript深入系列15篇/">JavaScript深入系列15篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/15/深入理解JS执行细节（写的很精辟）/">深入理解JS执行细节（写的很精辟）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/10/javascript回调函数笔记/">javascript回调函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/05/jquery插件开发规范/">jquery插件开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/05/你有必要知道的 25 个 JavaScript 面试题/">你有必要知道的 25 个 JavaScript 面试题</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/05/02/Javascript中apply、call、bind/">Javascript中apply、call、bind</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/20/分享一些自己的学习过程和学习方法/">分享一些自己的学习过程和学习方法（来自daimajia）</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/16/搭建Hexo博客并部署到Github/">搭建Hexo博客并部署到Github</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/16/Hexo和github打造个人博客/">Hexo和github打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/09/送给前端的你，推荐前端汇总文章/">送给前端的你，推荐前端汇总文章</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/09/一个过来人告诉你怎么学javascript/">一个过来人告诉你怎么学javascript</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 刘伟坤
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
